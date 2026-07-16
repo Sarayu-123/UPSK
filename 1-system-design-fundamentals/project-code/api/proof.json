@@ -1,0 +1,14 @@
+{
+  "summary": "Identified an observability gap in request log correlation. Route-level and database logs use the global logger directly instead of request-scoped logger context, losing request_id mapping. Proposed migrating to structlog.contextvars to ensure context propagation.",
+  "evidence": [
+    "Student identified request_id as the correlation field.",
+    "Student diagnosed that route-level logs (cache invalidation, cache hits) lack request_id because they call the global logger directly instead of the bound request_logger.",
+    "Student proposed using structlog.contextvars to automatically inject the request correlation ID into all logs emitted during a request's execution lifecycle."
+  ],
+  "artifacts": [
+    "c:/Users/shiva/CAW/api/app/main.py",
+    "c:/Users/shiva/CAW/api/app/metrics.py",
+    "c:/Users/shiva/CAW/api/app/middleware.py",
+    "c:/Users/shiva/CAW/api/app/crud.py"
+  ]
+}

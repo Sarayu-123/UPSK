@@ -1,0 +1,15 @@
+# Caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Databases
+*.db
+*.sqlite3
+
+# Environment
+.env
+.venv/
+venv/
+env/
+*.log
